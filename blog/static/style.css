@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  background-color: balck;
+}
+
+header li a {
+  color: white;
+  text-decoration: none;
+}
+
+

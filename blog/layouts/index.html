@@ -1,0 +1,14 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<article>
+  <ul>
+    {{ range (.Paginator 10).Pages }}
+      {{ .Render "list" }}
+    {{ end }}
+  </ul>
+</article>
+<nav>
+  <a href="#">前へ</a>
+  <a href="#">次へ</a>
+</nav>
+{{ partial "footer" . }}

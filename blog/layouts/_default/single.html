@@ -5,6 +5,12 @@
     <h1>{{ .Title }}</h1>
   </header>
 
+{{ with .Params.tags }}
+<div class="tags_list">
+  {{ range . }} <div class="tags_item"><a href="/tags/{{ lower . }}/">{{ . }}</a></div>{{ end }}
+</div>
+{{ end }}
+
   <div>
     <p>{{ .Content }}</p>
   </div>

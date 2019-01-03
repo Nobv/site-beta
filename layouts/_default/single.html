@@ -1,4 +1,5 @@
 {{ partial "header" . }}
+<main>
 <article>
   <header>
     <span>{{ .Date.Format "Jan 01, 2006" }}</span>
@@ -15,4 +16,5 @@
     <p>{{ .Content }}</p>
   </div>
 </article>
+</main>
 {{ partial "footer" . }}

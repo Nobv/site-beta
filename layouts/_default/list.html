@@ -1,5 +1,32 @@
-<li>
-  <a href="{{ .Permalink }}">
-    <span>{{ .Date.Format "Jan 02, 2006" }}</span>{{ .Title }}
-  </a>
-</li>
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<main>
+	<article>
+		<ul>
+			{{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+			{{ range $paginator.Pages }}
+			<li>
+				<a href="{{ .Permalink }}">
+					<span>{{ .Date.Format "Jan 02, 2006" }}</span>{{ .Title }}
+				</a>
+			</li>
+			{{ range .Params.tags }}
+				{{ $href := print (absURL "tags/") (urlize .) }}
+				<small><code><a href="{{ $href }}">{{ . }}</a></code></small>
+			{{ end }}
+			{{ end }}
+		</ul>
+	</article>
+	{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+	<nav class="pagination">
+		{{ if .Paginator.HasPrev }}
+			<a href="{{ .Paginator.Prev.URL }}">前へ</a>
+		{{ end }}
+		{{ if .Paginator.HasNext }}
+			<a href="{{ .Paginator.Next.URL }}">次へ</a>
+		{{ end }}
+	</nav>
+	{{ end }}
+
+</main>
+{{ partial "footer" . }}

@@ -1,14 +1,17 @@
 {{ partial "header" . }}
 {{ partial "nav" . }}
-<article>
-  <ul>
-    {{ range (.Paginator 10).Pages }}
-      {{ .Render "list" }}
-    {{ end }}
-  </ul>
-</article>
-<nav>
-  <a href="#">前へ</a>
-  <a href="#">次へ</a>
-</nav>
+<main>
+  <a class="cards" href="/blog">
+    <div>
+      <h1>Blog</h1>
+      <p>blogだよ！</p>
+    </div>
+  </a>
+  <a class="cards" href="/lab">
+    <div>
+      <h1>Lab</h1>
+      <p>labだよ！</p>
+    </div>
+  </a>
+</main>
 {{ partial "footer" . }}

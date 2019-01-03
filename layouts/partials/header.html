@@ -2,6 +2,6 @@
 <html lang="ja">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ブログタイトル未定</title>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/style.css">
-  <main>
+  <title>{{ .Title }}</title>
+  {{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">

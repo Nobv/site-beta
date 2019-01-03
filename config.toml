@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "ja"
-title = "Nobv.io"
+title = "Beta"
 
 [taxonomies]
   tag = "tags"

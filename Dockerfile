@@ -6,5 +6,7 @@ COPY . /app
 WORKDIR /app
 RUN hugo
 
-FROM nginx:alpine AS nginx
-COPY --from=builder /app/public /usr/share/nginx/html
+#FROM nginx:alpine AS nginx
+#COPY --from=builder /app/public /usr/share/nginx/html
+FROM lkwg82/h2o-http2-server
+COPY --from=builder /app/public /var/www/html

@@ -9,4 +9,6 @@ RUN hugo
 #FROM nginx:alpine AS nginx
 #COPY --from=builder /app/public /usr/share/nginx/html
 FROM lkwg82/h2o-http2-server
+#CMD ["mv", "/etc/h2o/h2o.conf", "/etc/h2o/h2o.conf.bk"]
+#COPY ./h2o.conf /etc/h2o/
 COPY --from=builder /app/public /var/www/html

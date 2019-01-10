@@ -1,20 +1,19 @@
 {{ partial "header" . }}
+{{ partial "nav" . }}
 <main>
-<article>
-  <header>
+  <article>
     <span>{{ .Date.Format "Jan 01, 2006" }}</span>
     <h1>{{ .Title }}</h1>
-  </header>
 
-{{ with .Params.tags }}
-<div class="tags_list">
-  {{ range . }} <div class="tags_item"><a href="/tags/{{ lower . }}/">{{ . }}</a></div>{{ end }}
-</div>
-{{ end }}
+    {{ with .Params.tags }}
+    <div class="tags_list">
+      {{ range . }} <div class="tags_item"><a href="/tags/{{ lower . }}/">{{ . }}</a></div>{{ end }}
+    </div>
+    {{ end }}
 
-  <div>
-    <p>{{ .Content }}</p>
-  </div>
-</article>
+    <div>
+      <p>{{ .Content }}</p>
+    </div>
+  </article>
 </main>
 {{ partial "footer" . }}

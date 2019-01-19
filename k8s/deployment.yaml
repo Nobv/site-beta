@@ -15,7 +15,7 @@ spec:
         app: site
     spec:
       containers:
-      - name: site
-        image: gcr.io/nobv-io/site-beta-container
-        ports:
-        - containerPort: 80
+        - name: site
+          image: gcr.io/nobv-io/site-beta-container:latest
+          ports:
+            - containerPort: 8080
